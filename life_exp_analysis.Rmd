@@ -15,6 +15,8 @@ Observing the linear relationship between maximum life expectancy and year.
 
 # Life Expectancy Analysis
 
+First, we will clean the data to format for plotting.
+
 ```{r}
 library(gapminder)
 library(tidyverse)
@@ -25,3 +27,5 @@ data %>%
   filter(lifeExp == max(lifeExp)) %>%
   arrange(year)
 ```
+
+Next, we will prepare a plot similar to that of Oeppen and Vaupel (2002).
