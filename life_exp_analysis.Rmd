@@ -18,6 +18,7 @@ Observing the linear relationship between maximum life expectancy and year.
 ```{r}
 library(gapminder)
 library(tidyverse)
+data <- gapminder_unfiltered
 
 data %>%
   group_by(year) %>%
