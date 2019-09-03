@@ -29,3 +29,17 @@ data %>%
 ```
 
 Next, we will prepare a plot similar to that of Oeppen and Vaupel (2002).
+
+```{r}
+data %>%
+  group_by(year) %>%
+  filter(lifeExp == max(lifeExp)) %>%
+  arrange(year) %>%
+  ggplot(aes(x=year, y=lifeExp)) +
+  geom_point(mapping=aes(fill=country), size=3, pch=21) +
+  geom_smooth(se=FALSE, method=lm, color="blue") +
+  scale_fill_discrete(name="Country") +
+  xlab("Year") +
+  ylab("Maximum Life Expectancy") +
+  theme_bw()
+```
